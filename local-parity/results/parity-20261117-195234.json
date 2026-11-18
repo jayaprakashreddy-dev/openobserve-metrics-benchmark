@@ -1,0 +1,4668 @@
+{
+ "end_ts": 1794722400.0,
+ "systems": [
+  "prometheus",
+  "mimir",
+  "vm",
+  "o2"
+ ],
+ "rows": [
+  {
+   "id": "A1-irate",
+   "group": "benchmark",
+   "why": "Vendor query 1",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.03,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.09
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.03
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.03
+    }
+   }
+  },
+  {
+   "id": "A2-hist-all",
+   "group": "benchmark",
+   "why": "Vendor query 2 (all buckets)",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.38,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 1.34
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 54/54 value_diffs=54 max_rel=0.349",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 54,
+      "point_mismatch": 0,
+      "max_rel": 0.3487439610758101,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": null,
+        "ref": 0.018619916390685887,
+        "got": 0.01862974696352588
+       },
+       {
+        "labels": {
+         "path": "/api/service-42"
+        },
+        "ts": null,
+        "ref": 0.04263494150890003,
+        "got": 0.042263640455150804
+       },
+       {
+        "labels": {
+         "path": "/api/service-8"
+        },
+        "ts": null,
+        "ref": 0.056253475267588254,
+        "got": 0.05547338022535095
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.51
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.13
+    }
+   }
+  },
+  {
+   "id": "A3-hist-regex",
+   "group": "benchmark",
+   "why": "Vendor query 3",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.01,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.14
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=1 max_rel=0.000291",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 1,
+      "point_mismatch": 0,
+      "max_rel": 0.0002909279969921766,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": null,
+        "ref": 0.06116596181685594,
+        "got": 0.061148166926100464
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    }
+   }
+  },
+  {
+   "id": "A4-hist-eq",
+   "group": "benchmark",
+   "why": "Vendor query 4",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.01,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.11
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=1 max_rel=0.000291",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 1,
+      "point_mismatch": 0,
+      "max_rel": 0.00029092799699240347,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": null,
+        "ref": 0.06116596181685594,
+        "got": 0.06114816692610045
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    }
+   }
+  },
+  {
+   "id": "R1-irate-30m",
+   "group": "benchmark-range",
+   "why": "Vendor query 1",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.09,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.03
+    }
+   }
+  },
+  {
+   "id": "R1-irate-1h",
+   "group": "benchmark-range",
+   "why": "Vendor query 1",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.15,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.08
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.04
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    }
+   }
+  },
+  {
+   "id": "R1-irate-3h",
+   "group": "benchmark-range",
+   "why": "Vendor query 1",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.36,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.11
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.08
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.13
+    }
+   }
+  },
+  {
+   "id": "R2-hist-all-30m",
+   "group": "benchmark-range",
+   "why": "Vendor query 2 (all buckets)",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 2.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.65
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 54/54 value_diffs=6531 max_rel=0.495",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 6531,
+      "point_mismatch": 0,
+      "max_rel": 0.49525301023208834,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": 1794722310.0,
+        "ref": 0.018717636352806176,
+        "got": 0.018647997854676877
+       },
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": 1794721800.0,
+        "ref": 0.01862905996317722,
+        "got": 0.01863490920170695
+       },
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": 1794721290.0,
+        "ref": 0.01865861950636718,
+        "got": 0.018631568457787864
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.54
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.31
+    }
+   }
+  },
+  {
+   "id": "R2-hist-all-1h",
+   "group": "benchmark-range",
+   "why": "Vendor query 2 (all buckets)",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 3.62,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.86
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 54/54 value_diffs=13009 max_rel=0.554",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 13009,
+      "point_mismatch": 0,
+      "max_rel": 0.5542569658581177,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": 1794719745.0,
+        "ref": 0.018598620106550667,
+        "got": 0.01860940623074292
+       },
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": 1794719235.0,
+        "ref": 0.018624069607661043,
+        "got": 0.018649901925467113
+       },
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": 1794722310.0,
+        "ref": 0.018717636352806176,
+        "got": 0.018647997854676877
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.87
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.57
+    }
+   }
+  },
+  {
+   "id": "R2-hist-all-3h",
+   "group": "benchmark-range",
+   "why": "Vendor query 2 (all buckets)",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 9.7,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 1.77
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 54/54 value_diffs=38859 max_rel=0.554",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 38859,
+      "point_mismatch": 0,
+      "max_rel": 0.5542569658581177,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": 1794719745.0,
+        "ref": 0.018598620106550667,
+        "got": 0.01860940623074292
+       },
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": 1794715650.0,
+        "ref": 0.018686035083925103,
+        "got": 0.018636305494554115
+       },
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": 1794721800.0,
+        "ref": 0.01862905996317722,
+        "got": 0.01863490920170695
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 1.64
+    },
+    "o2": {
+     "verdict": "DIFF",
+     "summary": "series 54/54 value_diffs=1004 max_rel=0.353",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 1004,
+      "point_mismatch": 0,
+      "max_rel": 0.35283334676512956,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": 1794711615.0,
+        "ref": 0.01887682014016544,
+        "got": 0.019067896864414215
+       },
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": 1794711630.0,
+        "ref": 0.018800130930466386,
+        "got": 0.018767265441154476
+       },
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": 1794711645.0,
+        "ref": 0.018481642697324458,
+        "got": 0.0184005262969754
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 1.2
+    }
+   }
+  },
+  {
+   "id": "R3-hist-regex-30m",
+   "group": "benchmark-range",
+   "why": "Vendor query 3",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.04,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.14
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=121 max_rel=0.402",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 121,
+      "point_mismatch": 0,
+      "max_rel": 0.4020926596684439,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794722310.0,
+        "ref": 0.06102606873202813,
+        "got": 0.06101240221963951
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794721800.0,
+        "ref": 0.061018091214848975,
+        "got": 0.06109210853679645
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794721290.0,
+        "ref": 0.06262319901666356,
+        "got": 0.06334246226436475
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    }
+   }
+  },
+  {
+   "id": "R3-hist-regex-1h",
+   "group": "benchmark-range",
+   "why": "Vendor query 3",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.07,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.29
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=241 max_rel=0.402",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 241,
+      "point_mismatch": 0,
+      "max_rel": 0.4020926596684439,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794719745.0,
+        "ref": 0.11748747056593692,
+        "got": 0.11485352869448194
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794719235.0,
+        "ref": 0.06342782154946552,
+        "got": 0.06328688712079822
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794722310.0,
+        "ref": 0.06102606873202813,
+        "got": 0.06101240221963952
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.14
+    }
+   }
+  },
+  {
+   "id": "R3-hist-regex-3h",
+   "group": "benchmark-range",
+   "why": "Vendor query 3",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.2,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.35
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=720 max_rel=0.446",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 720,
+      "point_mismatch": 0,
+      "max_rel": 0.4459642020683172,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794719745.0,
+        "ref": 0.11748747056593692,
+        "got": 0.114853528694482
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794715650.0,
+        "ref": 0.0639568792869358,
+        "got": 0.06527625059407195
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794721800.0,
+        "ref": 0.061018091214848975,
+        "got": 0.06109210853679645
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.04
+    },
+    "o2": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=18 max_rel=0.346",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 18,
+      "point_mismatch": 0,
+      "max_rel": 0.3464706297017408,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794711615.0,
+        "ref": 0.19491282623552592,
+        "got": 0.19629859933952787
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794711630.0,
+        "ref": 0.19523420907293046,
+        "got": 0.1964058913385107
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794711645.0,
+        "ref": 0.1865523029583325,
+        "got": 0.18798831643668076
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.27
+    }
+   }
+  },
+  {
+   "id": "R4-hist-eq-30m",
+   "group": "benchmark-range",
+   "why": "Vendor query 4",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.03,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.12
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=121 max_rel=0.402",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 121,
+      "point_mismatch": 0,
+      "max_rel": 0.4020926596684439,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794722310.0,
+        "ref": 0.06102606873202813,
+        "got": 0.06101240221963952
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794721800.0,
+        "ref": 0.061018091214848975,
+        "got": 0.06109210853679645
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794721290.0,
+        "ref": 0.06262319901666356,
+        "got": 0.06334246226436474
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    }
+   }
+  },
+  {
+   "id": "R4-hist-eq-1h",
+   "group": "benchmark-range",
+   "why": "Vendor query 4",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.07,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.27
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=241 max_rel=0.402",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 241,
+      "point_mismatch": 0,
+      "max_rel": 0.4020926596684441,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794719745.0,
+        "ref": 0.11748747056593692,
+        "got": 0.11485352869448215
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794719235.0,
+        "ref": 0.06342782154946552,
+        "got": 0.06328688712079822
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794722310.0,
+        "ref": 0.06102606873202813,
+        "got": 0.06101240221963952
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.13
+    }
+   }
+  },
+  {
+   "id": "R4-hist-eq-3h",
+   "group": "benchmark-range",
+   "why": "Vendor query 4",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.19,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.37
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=720 max_rel=0.446",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 720,
+      "point_mismatch": 0,
+      "max_rel": 0.4459642020683172,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794719745.0,
+        "ref": 0.11748747056593692,
+        "got": 0.114853528694482
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794715650.0,
+        "ref": 0.0639568792869358,
+        "got": 0.06527625059407197
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794721800.0,
+        "ref": 0.061018091214848975,
+        "got": 0.06109210853679645
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.04
+    },
+    "o2": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=18 max_rel=0.346",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 18,
+      "point_mismatch": 0,
+      "max_rel": 0.3464706297017408,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794711615.0,
+        "ref": 0.19491282623552592,
+        "got": 0.19629859933952787
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794711630.0,
+        "ref": 0.19523420907293046,
+        "got": 0.1964058913385107
+       },
+       {
+        "labels": {
+         "path": "/api/bar"
+        },
+        "ts": 1794711645.0,
+        "ref": 0.1865523029583325,
+        "got": 0.18798831643668076
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.28
+    }
+   }
+  },
+  {
+   "id": "B1-missing-eq",
+   "group": "selectors",
+   "why": "Prometheus: empty. Bug class: matcher on missing label ignored (#15761)",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "DIFF",
+     "summary": "series 1/0 extra=1",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 1,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": [
+       {}
+      ]
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "B2-missing-neq",
+   "group": "selectors",
+   "why": "Prometheus: all series",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.02,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.09
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.03
+    }
+   }
+  },
+  {
+   "id": "B3-missing-empty",
+   "group": "selectors",
+   "why": "Prometheus: all series",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.02,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "B4-missing-regex-all",
+   "group": "selectors",
+   "why": "Prometheus: all series",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.02,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.03
+    }
+   }
+  },
+  {
+   "id": "B5-status-neq",
+   "group": "selectors",
+   "why": "Negative matcher (#15892)",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "B6-status-empty",
+   "group": "selectors",
+   "why": "Empty-string matcher (#15892)",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    }
+   }
+  },
+  {
+   "id": "C1-hist-by-le",
+   "group": "functions",
+   "why": "histogram_quantile grouping",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.01,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.11
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=1 max_rel=0.000291",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 1,
+      "point_mismatch": 0,
+      "max_rel": 0.00029092799699240347,
+      "examples": [
+       {
+        "labels": {},
+        "ts": null,
+        "ref": 0.06116596181685594,
+        "got": 0.06114816692610045
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    }
+   }
+  },
+  {
+   "id": "C2-hist-unaggregated",
+   "group": "functions",
+   "why": "histogram_quantile without aggregation (label/__name__ handling)",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.01,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 60/60",
+     "detail": {
+      "ref_series": 60,
+      "got_series": 60,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 48/60 missing=12 value_diffs=30 max_rel=0.355",
+     "detail": {
+      "ref_series": 60,
+      "got_series": 48,
+      "missing": 12,
+      "extra": 0,
+      "value_diffs": 30,
+      "point_mismatch": 0,
+      "max_rel": 0.3554602523463237,
+      "examples": [
+       {
+        "labels": {
+         "app": "fake-webserver",
+         "instance": "localhost:8080",
+         "job": "fake-webserver",
+         "method": "GET",
+         "namespace": "local",
+         "node": "laptop",
+         "path": "/api/bar",
+         "pod": "fake-1",
+         "region": "ap-southeast-1",
+         "status": "200",
+         "version": "v1.0.0",
+         "vnode": "fake-webserver-1"
+        },
+        "ts": null,
+        "ref": 0.01936340916114517,
+        "got": 0.019343280252596226
+       },
+       {
+        "labels": {
+         "app": "fake-webserver",
+         "instance": "localhost:8080",
+         "job": "fake-webserver",
+         "method": "GET",
+         "namespace": "local",
+         "node": "laptop",
+         "path": "/api/bar",
+         "pod": "fake-1",
+         "region": "ap-southeast-1",
+         "status": "200",
+         "version": "v1.1.0",
+         "vnode": "fake-webserver-1"
+        },
+        "ts": null,
+        "ref": 0.032988006408691414,
+        "got": 0.03182028936767579
+       },
+       {
+        "labels": {
+         "app": "fake-webserver",
+         "instance": "localhost:8080",
+         "job": "fake-webserver",
+         "method": "GET",
+         "namespace": "local",
+         "node": "laptop",
+         "path": "/api/bar",
+         "pod": "fake-1",
+         "region": "us-east-1",
+         "status": "200",
+         "version": "v1.1.0",
+         "vnode": "fake-webserver-2"
+        },
+        "ts": null,
+        "ref": 0.034788236846923816,
+        "got": 0.03138239547729492
+       }
+      ],
+      "missing_examples": [
+       {
+        "app": "fake-webserver",
+        "instance": "localhost:8080",
+        "job": "fake-webserver",
+        "method": "GET",
+        "namespace": "local",
+        "node": "laptop",
+        "path": "/api/bar",
+        "pod": "fake-1",
+        "region": "ap-southeast-1",
+        "status": "500",
+        "version": "v1.0.0",
+        "vnode": "fake-webserver-1"
+       },
+       {
+        "app": "fake-webserver",
+        "instance": "localhost:8080",
+        "job": "fake-webserver",
+        "method": "GET",
+        "namespace": "local",
+        "node": "laptop",
+        "path": "/api/bar",
+        "pod": "fake-1",
+        "region": "ap-southeast-1",
+        "status": "500",
+        "version": "v1.1.0",
+        "vnode": "fake-webserver-1"
+       }
+      ],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 60/60",
+     "detail": {
+      "ref_series": 60,
+      "got_series": 60,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "C3-label_replace",
+   "group": "functions",
+   "why": "label_replace",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.03,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 54/54 value_diffs=54 max_rel=0.0167",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 54,
+      "point_mismatch": 0,
+      "max_rel": 0.01671239710651028,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/service-11",
+         "svc": "service-11"
+        },
+        "ts": null,
+        "ref": 39.06666666666667,
+        "got": 38.50175438596491
+       },
+       {
+        "labels": {
+         "path": "/api/service-35",
+         "svc": "service-35"
+        },
+        "ts": null,
+        "ref": 39.144444444444446,
+        "got": 38.50175438596492
+       },
+       {
+        "labels": {
+         "path": "/api/service-19",
+         "svc": "service-19"
+        },
+        "ts": null,
+        "ref": 38.803703703703704,
+        "got": 38.23157894736842
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.03
+    }
+   }
+  },
+  {
+   "id": "C4-label_join",
+   "group": "functions",
+   "why": "label_join",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.02,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 108/108",
+     "detail": {
+      "ref_series": 108,
+      "got_series": 108,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 108/108 value_diffs=108 max_rel=0.0184",
+     "detail": {
+      "ref_series": 108,
+      "got_series": 108,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 108,
+      "point_mismatch": 0,
+      "max_rel": 0.018361244019138624,
+      "examples": [
+       {
+        "labels": {
+         "method": "GET",
+         "path": "/api/service-39",
+         "pm": "/api/service-39-GET"
+        },
+        "ts": null,
+        "ref": 19.462962962962962,
+        "got": 19.164912280701756
+       },
+       {
+        "labels": {
+         "method": "GET",
+         "path": "/api/service-31",
+         "pm": "/api/service-31-GET"
+        },
+        "ts": null,
+        "ref": 19.548148148148147,
+        "got": 19.19649122807018
+       },
+       {
+        "labels": {
+         "method": "GET",
+         "path": "/api/service-37",
+         "pm": "/api/service-37-GET"
+        },
+        "ts": null,
+        "ref": 19.566666666666666,
+        "got": 19.287719298245616
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 108/108",
+     "detail": {
+      "ref_series": 108,
+      "got_series": 108,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.03
+    }
+   }
+  },
+  {
+   "id": "C5-count_values",
+   "group": "functions",
+   "why": "count_values grouping",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "C6-topk-0",
+   "group": "functions",
+   "why": "Invalid k: Prometheus returns empty",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.03,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.03
+    }
+   }
+  },
+  {
+   "id": "C7-topk-3",
+   "group": "functions",
+   "why": "topk",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.03,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 3/3",
+     "detail": {
+      "ref_series": 3,
+      "got_series": 3,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 3/3 missing=1 extra=1 value_diffs=2 max_rel=0.0152",
+     "detail": {
+      "ref_series": 3,
+      "got_series": 3,
+      "missing": 1,
+      "extra": 1,
+      "value_diffs": 2,
+      "point_mismatch": 0,
+      "max_rel": 0.015248309169211341,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/service-45"
+        },
+        "ts": null,
+        "ref": 39.51481481481482,
+        "got": 38.91228070175439
+       },
+       {
+        "labels": {
+         "path": "/api/service-22"
+        },
+        "ts": null,
+        "ref": 39.43333333333334,
+        "got": 38.87368421052632
+       }
+      ],
+      "missing_examples": [
+       {
+        "path": "/api/bar"
+       }
+      ],
+      "extra_examples": [
+       {
+        "path": "/api/service-42"
+       }
+      ]
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 3/3",
+     "detail": {
+      "ref_series": 3,
+      "got_series": 3,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.03
+    }
+   }
+  },
+  {
+   "id": "C8-bottomk-3",
+   "group": "functions",
+   "why": "bottomk",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.03,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 3/3",
+     "detail": {
+      "ref_series": 3,
+      "got_series": 3,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 3/3 missing=1 extra=1 value_diffs=2 max_rel=0.0141",
+     "detail": {
+      "ref_series": 3,
+      "got_series": 3,
+      "missing": 1,
+      "extra": 1,
+      "value_diffs": 2,
+      "point_mismatch": 0,
+      "max_rel": 0.014146434716115354,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/service-5"
+        },
+        "ts": null,
+        "ref": 38.56666666666667,
+        "got": 38.05964912280702
+       },
+       {
+        "labels": {
+         "path": "/api/service-17"
+        },
+        "ts": null,
+        "ref": 38.74814814814815,
+        "got": 38.2
+       }
+      ],
+      "missing_examples": [
+       {
+        "path": "/api/service-15"
+       }
+      ],
+      "extra_examples": [
+       {
+        "path": "/api/service-9"
+       }
+      ]
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 3/3",
+     "detail": {
+      "ref_series": 3,
+      "got_series": 3,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.03
+    }
+   }
+  },
+  {
+   "id": "C9-quantile-by",
+   "group": "functions",
+   "why": "quantile aggregation",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.02,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.04
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 54/54 value_diffs=54 max_rel=0.041",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 54,
+      "point_mismatch": 0,
+      "max_rel": 0.04100742654181468,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": null,
+        "ref": 0.2888888888888889,
+        "got": 0.28421052631578947
+       },
+       {
+        "labels": {
+         "path": "/api/service-42"
+        },
+        "ts": null,
+        "ref": 0.2796296296296297,
+        "got": 0.2807017543859649
+       },
+       {
+        "labels": {
+         "path": "/api/service-8"
+        },
+        "ts": null,
+        "ref": 0.2722222222222222,
+        "got": 0.26666666666666666
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "C10-stddev-over-time",
+   "group": "functions",
+   "why": "Variance implementation",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "C11-stdvar-over-time",
+   "group": "functions",
+   "why": "Variance implementation",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    }
+   }
+  },
+  {
+   "id": "C12-predict_linear",
+   "group": "functions",
+   "why": "Regression",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 120/120",
+     "detail": {
+      "ref_series": 120,
+      "got_series": 120,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 120/120 missing=120 extra=120",
+     "detail": {
+      "ref_series": 120,
+      "got_series": 120,
+      "missing": 120,
+      "extra": 120,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [
+       {
+        "app": "fake-webserver",
+        "instance": "localhost:8080",
+        "job": "fake-webserver",
+        "method": "GET",
+        "namespace": "local",
+        "node": "laptop",
+        "path": "/api/bar",
+        "pod": "fake-1",
+        "region": "ap-southeast-1",
+        "status": "200",
+        "version": "v1.0.0",
+        "vnode": "fake-webserver-1"
+       },
+       {
+        "app": "fake-webserver",
+        "instance": "localhost:8080",
+        "job": "fake-webserver",
+        "method": "GET",
+        "namespace": "local",
+        "node": "laptop",
+        "path": "/api/bar",
+        "pod": "fake-1",
+        "region": "ap-southeast-1",
+        "status": "200",
+        "version": "v1.0.0",
+        "vnode": "fake-webserver-2"
+       }
+      ],
+      "extra_examples": [
+       {
+        "__name__": "codelab_api_requests_total",
+        "app": "fake-webserver",
+        "instance": "localhost:8080",
+        "job": "fake-webserver",
+        "method": "GET",
+        "namespace": "local",
+        "node": "laptop",
+        "path": "/api/bar",
+        "pod": "fake-1",
+        "region": "ap-southeast-1",
+        "status": "200",
+        "version": "v1.0.0",
+        "vnode": "fake-webserver-1"
+       },
+       {
+        "__name__": "codelab_api_requests_total",
+        "app": "fake-webserver",
+        "instance": "localhost:8080",
+        "job": "fake-webserver",
+        "method": "GET",
+        "namespace": "local",
+        "node": "laptop",
+        "path": "/api/bar",
+        "pod": "fake-1",
+        "region": "ap-southeast-1",
+        "status": "200",
+        "version": "v1.0.0",
+        "vnode": "fake-webserver-2"
+       }
+      ]
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 120/120",
+     "detail": {
+      "ref_series": 120,
+      "got_series": 120,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "C13-predict_linear-offset",
+   "group": "functions",
+   "why": "Regression with offset",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 120/120",
+     "detail": {
+      "ref_series": 120,
+      "got_series": 120,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 120/120 missing=120 extra=120",
+     "detail": {
+      "ref_series": 120,
+      "got_series": 120,
+      "missing": 120,
+      "extra": 120,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [
+       {
+        "app": "fake-webserver",
+        "instance": "localhost:8080",
+        "job": "fake-webserver",
+        "method": "GET",
+        "namespace": "local",
+        "node": "laptop",
+        "path": "/api/bar",
+        "pod": "fake-1",
+        "region": "ap-southeast-1",
+        "status": "200",
+        "version": "v1.0.0",
+        "vnode": "fake-webserver-1"
+       },
+       {
+        "app": "fake-webserver",
+        "instance": "localhost:8080",
+        "job": "fake-webserver",
+        "method": "GET",
+        "namespace": "local",
+        "node": "laptop",
+        "path": "/api/bar",
+        "pod": "fake-1",
+        "region": "ap-southeast-1",
+        "status": "200",
+        "version": "v1.0.0",
+        "vnode": "fake-webserver-2"
+       }
+      ],
+      "extra_examples": [
+       {
+        "__name__": "codelab_api_requests_total",
+        "app": "fake-webserver",
+        "instance": "localhost:8080",
+        "job": "fake-webserver",
+        "method": "GET",
+        "namespace": "local",
+        "node": "laptop",
+        "path": "/api/bar",
+        "pod": "fake-1",
+        "region": "ap-southeast-1",
+        "status": "200",
+        "version": "v1.0.0",
+        "vnode": "fake-webserver-1"
+       },
+       {
+        "__name__": "codelab_api_requests_total",
+        "app": "fake-webserver",
+        "instance": "localhost:8080",
+        "job": "fake-webserver",
+        "method": "GET",
+        "namespace": "local",
+        "node": "laptop",
+        "path": "/api/bar",
+        "pod": "fake-1",
+        "region": "ap-southeast-1",
+        "status": "200",
+        "version": "v1.0.0",
+        "vnode": "fake-webserver-2"
+       }
+      ]
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "DIFF",
+     "summary": "series 120/120 value_diffs=119 max_rel=0.0585",
+     "detail": {
+      "ref_series": 120,
+      "got_series": 120,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 119,
+      "point_mismatch": 0,
+      "max_rel": 0.058474790227042266,
+      "examples": [
+       {
+        "labels": {
+         "app": "fake-webserver",
+         "instance": "localhost:8080",
+         "job": "fake-webserver",
+         "method": "GET",
+         "namespace": "local",
+         "node": "laptop",
+         "path": "/api/bar",
+         "pod": "fake-1",
+         "region": "eu-central-1",
+         "status": "500",
+         "version": "v1.2.0",
+         "vnode": "fake-webserver-2"
+        },
+        "ts": null,
+        "ref": 44.962955760816726,
+        "got": 43.43271060490312
+       },
+       {
+        "labels": {
+         "app": "fake-webserver",
+         "instance": "localhost:8080",
+         "job": "fake-webserver",
+         "method": "GET",
+         "namespace": "local",
+         "node": "laptop",
+         "path": "/api/bar",
+         "pod": "fake-1",
+         "region": "ap-southeast-1",
+         "status": "200",
+         "version": "v1.0.0",
+         "vnode": "fake-webserver-1"
+        },
+        "ts": null,
+        "ref": 8964.764098201264,
+        "got": 8602.361848045002
+       },
+       {
+        "labels": {
+         "app": "fake-webserver",
+         "instance": "localhost:8080",
+         "job": "fake-webserver",
+         "method": "POST",
+         "namespace": "local",
+         "node": "laptop",
+         "path": "/api/bar",
+         "pod": "fake-1",
+         "region": "eu-central-1",
+         "status": "200",
+         "version": "v1.0.0",
+         "vnode": "fake-webserver-2"
+        },
+        "ts": null,
+        "ref": 9074.203629881706,
+        "got": 8698.304331319305
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    }
+   }
+  },
+  {
+   "id": "C14-deriv",
+   "group": "functions",
+   "why": "Regression",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    }
+   }
+  },
+  {
+   "id": "C15-absent",
+   "group": "functions",
+   "why": "absent() labels + value",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    }
+   }
+  },
+  {
+   "id": "C16-absent_over_time",
+   "group": "functions",
+   "why": "absent_over_time",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    }
+   }
+  },
+  {
+   "id": "C17-timestamp",
+   "group": "functions",
+   "why": "timestamp()",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    }
+   }
+  },
+  {
+   "id": "C18-sgn",
+   "group": "functions",
+   "why": "sgn()",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 30/30",
+     "detail": {
+      "ref_series": 30,
+      "got_series": 30,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    }
+   }
+  },
+  {
+   "id": "C19-and-on",
+   "group": "functions",
+   "why": "Set operation with on()",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.05,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.13
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 54/54 value_diffs=54 max_rel=0.0167",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 54,
+      "point_mismatch": 0,
+      "max_rel": 0.01671239710651028,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": null,
+        "ref": 39.262962962962966,
+        "got": 38.63859649122807
+       },
+       {
+        "labels": {
+         "path": "/api/service-42"
+        },
+        "ts": null,
+        "ref": 39.42962962962963,
+        "got": 38.88070175438597
+       },
+       {
+        "labels": {
+         "path": "/api/service-8"
+        },
+        "ts": null,
+        "ref": 38.88888888888889,
+        "got": 38.31578947368421
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.04
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    }
+   }
+  },
+  {
+   "id": "C20-unless-ignoring",
+   "group": "functions",
+   "why": "Set operation with ignoring()",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.06,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.13
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.04
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.07
+    }
+   }
+  },
+  {
+   "id": "C21-group_left",
+   "group": "functions",
+   "why": "group_left matching",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.05,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 108/108",
+     "detail": {
+      "ref_series": 108,
+      "got_series": 108,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 108/108 value_diffs=108 max_rel=0.00256",
+     "detail": {
+      "ref_series": 108,
+      "got_series": 108,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 108,
+      "point_mismatch": 0,
+      "max_rel": 0.0025552885362777303,
+      "examples": [
+       {
+        "labels": {
+         "method": "POST",
+         "path": "/api/service-4"
+        },
+        "ts": null,
+        "ref": 0.5006635071090048,
+        "got": 0.500730593607306
+       },
+       {
+        "labels": {
+         "method": "GET",
+         "path": "/api/service-11"
+        },
+        "ts": null,
+        "ref": 0.5029389457717103,
+        "got": 0.5028706825845256
+       },
+       {
+        "labels": {
+         "method": "GET",
+         "path": "/api/service-25"
+        },
+        "ts": null,
+        "ref": 0.5033671630465711,
+        "got": 0.5027367268746578
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.04
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 108/108",
+     "detail": {
+      "ref_series": 108,
+      "got_series": 108,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.05
+    }
+   }
+  },
+  {
+   "id": "C22-avg",
+   "group": "functions",
+   "why": "avg",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.02,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=1 max_rel=0.0148",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 1,
+      "point_mismatch": 0,
+      "max_rel": 0.014845893621205686,
+      "examples": [
+       {
+        "labels": {},
+        "ts": null,
+        "ref": 0.32572588020118887,
+        "got": 0.32089018843404843
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "C23-rate-plain",
+   "group": "functions",
+   "why": "rate() extrapolation",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 60/60",
+     "detail": {
+      "ref_series": 60,
+      "got_series": 60,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 60/60 value_diffs=48 max_rel=0.0526",
+     "detail": {
+      "ref_series": 60,
+      "got_series": 60,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 48,
+      "point_mismatch": 0,
+      "max_rel": 0.05263157894736848,
+      "examples": [
+       {
+        "labels": {
+         "app": "fake-webserver",
+         "instance": "localhost:8080",
+         "job": "fake-webserver",
+         "method": "GET",
+         "namespace": "local",
+         "node": "laptop",
+         "path": "/api/bar",
+         "pod": "fake-1",
+         "region": "eu-west-1",
+         "status": "500",
+         "version": "v1.0.0",
+         "vnode": "fake-webserver-1"
+        },
+        "ts": null,
+        "ref": 0.007407407407407408,
+        "got": 0.007017543859649123
+       },
+       {
+        "labels": {
+         "app": "fake-webserver",
+         "instance": "localhost:8080",
+         "job": "fake-webserver",
+         "method": "GET",
+         "namespace": "local",
+         "node": "laptop",
+         "path": "/api/bar",
+         "pod": "fake-1",
+         "region": "ap-southeast-1",
+         "status": "200",
+         "version": "v1.0.0",
+         "vnode": "fake-webserver-1"
+        },
+        "ts": null,
+        "ref": 0.6814814814814815,
+        "got": 0.6666666666666666
+       },
+       {
+        "labels": {
+         "app": "fake-webserver",
+         "instance": "localhost:8080",
+         "job": "fake-webserver",
+         "method": "GET",
+         "namespace": "local",
+         "node": "laptop",
+         "path": "/api/bar",
+         "pod": "fake-1",
+         "region": "ap-southeast-1",
+         "status": "500",
+         "version": "v1.1.0",
+         "vnode": "fake-webserver-2"
+        },
+        "ts": null,
+        "ref": 0.003703703703703704,
+        "got": 0.0035087719298245615
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 60/60",
+     "detail": {
+      "ref_series": 60,
+      "got_series": 60,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "C24-increase",
+   "group": "functions",
+   "why": "increase() extrapolation",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 60/60",
+     "detail": {
+      "ref_series": 60,
+      "got_series": 60,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 60/60 value_diffs=54 max_rel=0.158",
+     "detail": {
+      "ref_series": 60,
+      "got_series": 60,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 54,
+      "point_mismatch": 0,
+      "max_rel": 0.1578947368421053,
+      "examples": [
+       {
+        "labels": {
+         "app": "fake-webserver",
+         "instance": "localhost:8080",
+         "job": "fake-webserver",
+         "method": "GET",
+         "namespace": "local",
+         "node": "laptop",
+         "path": "/api/bar",
+         "pod": "fake-1",
+         "region": "eu-west-1",
+         "status": "500",
+         "version": "v1.0.0",
+         "vnode": "fake-webserver-1"
+        },
+        "ts": null,
+        "ref": 4.2105263157894735,
+        "got": 5.0
+       },
+       {
+        "labels": {
+         "app": "fake-webserver",
+         "instance": "localhost:8080",
+         "job": "fake-webserver",
+         "method": "GET",
+         "namespace": "local",
+         "node": "laptop",
+         "path": "/api/bar",
+         "pod": "fake-1",
+         "region": "ap-southeast-1",
+         "status": "200",
+         "version": "v1.0.0",
+         "vnode": "fake-webserver-1"
+        },
+        "ts": null,
+        "ref": 411.57894736842104,
+        "got": 391.0
+       },
+       {
+        "labels": {
+         "app": "fake-webserver",
+         "instance": "localhost:8080",
+         "job": "fake-webserver",
+         "method": "GET",
+         "namespace": "local",
+         "node": "laptop",
+         "path": "/api/bar",
+         "pod": "fake-1",
+         "region": "ap-southeast-1",
+         "status": "500",
+         "version": "v1.1.0",
+         "vnode": "fake-webserver-2"
+        },
+        "ts": null,
+        "ref": 3.1578947368421053,
+        "got": 3.0
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 60/60",
+     "detail": {
+      "ref_series": 60,
+      "got_series": 60,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "C25-histogram_quantile-0.99",
+   "group": "functions",
+   "why": "Quantile over all series",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.38,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.46
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=1 max_rel=0.000507",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 1,
+      "point_mismatch": 0,
+      "max_rel": 0.0005073422662417471,
+      "examples": [
+       {
+        "labels": {},
+        "ts": null,
+        "ref": 0.12499706113399608,
+        "got": 0.1250605096163622
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.41
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.12
+    }
+   }
+  },
+  {
+   "id": "D1-subquery",
+   "group": "modifiers",
+   "why": "Subquery",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.03,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.04
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=1 max_rel=0.00839",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 1,
+      "point_mismatch": 0,
+      "max_rel": 0.008386556048289626,
+      "examples": [
+       {
+        "labels": {},
+        "ts": null,
+        "ref": 3141.933333333333,
+        "got": 3115.5833333333435
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "D2-at-end",
+   "group": "modifiers",
+   "why": "@ modifier",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.02,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=1 max_rel=0.0148",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 1,
+      "point_mismatch": 0,
+      "max_rel": 0.014845893621205442,
+      "examples": [
+       {
+        "labels": {},
+        "ts": null,
+        "ref": 2110.703703703704,
+        "got": 2079.3684210526344
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "D3-subquery-at",
+   "group": "modifiers",
+   "why": "Subquery with @ (rejected by OpenObserve per #14924)",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.03,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.05
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=1 max_rel=0.00839",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 1,
+      "point_mismatch": 0,
+      "max_rel": 0.008386556048289626,
+      "examples": [
+       {
+        "labels": {},
+        "ts": null,
+        "ref": 3141.933333333333,
+        "got": 3115.5833333333435
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "ERR",
+     "summary": "error: This feature is not implemented: Subquery: @ modifier is not supported",
+     "detail": {
+      "error": "This feature is not implemented: Subquery: @ modifier is not supported"
+     },
+     "elapsed": 0.0
+    }
+   }
+  },
+  {
+   "id": "D4-offset",
+   "group": "modifiers",
+   "why": "offset",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.03,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 1/1 value_diffs=1 max_rel=0.0138",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 1,
+      "point_mismatch": 0,
+      "max_rel": 0.013779685480759009,
+      "examples": [
+       {
+        "labels": {},
+        "ts": null,
+        "ref": 2090.6315789473683,
+        "got": 2061.823333333331
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.03
+    }
+   }
+  },
+  {
+   "id": "E1-lookback-3m",
+   "group": "lookback",
+   "why": "Within 5m after last sample: Prometheus returns a value",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.02,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "E2-lookback-7m",
+   "group": "lookback",
+   "why": "Beyond 5m: Prometheus returns empty",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.01
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 0/0",
+     "detail": {
+      "ref_series": 0,
+      "got_series": 0,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    }
+   }
+  },
+  {
+   "id": "F1-string-literal",
+   "group": "api",
+   "why": "Instant string result type",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "result type string vs vector",
+     "detail": {
+      "note": "result type string vs vector"
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "ERR",
+     "summary": "error: invalid result type: string",
+     "detail": {
+      "error": "invalid result type: string"
+     },
+     "elapsed": 0.0
+    }
+   }
+  },
+  {
+   "id": "F2-scalar",
+   "group": "api",
+   "why": "Scalar result type",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "result type scalar vs vector",
+     "detail": {
+      "note": "result type scalar vs vector"
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "series 1/1",
+     "detail": {
+      "ref_series": 1,
+      "got_series": 1,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.0
+    }
+   }
+  },
+  {
+   "id": "F3-range-start-eq-end",
+   "group": "api",
+   "why": "start==end: Prometheus returns a matrix",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.02,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "series 54/54",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 0,
+      "point_mismatch": 0,
+      "max_rel": 0.0,
+      "examples": [],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.06
+    },
+    "vm": {
+     "verdict": "DIFF",
+     "summary": "series 54/54 value_diffs=54 max_rel=0.0167",
+     "detail": {
+      "ref_series": 54,
+      "got_series": 54,
+      "missing": 0,
+      "extra": 0,
+      "value_diffs": 54,
+      "point_mismatch": 0,
+      "max_rel": 0.01671239710651028,
+      "examples": [
+       {
+        "labels": {
+         "path": "/api/boom"
+        },
+        "ts": 1794722400.0,
+        "ref": 39.262962962962966,
+        "got": 38.63859649122807
+       },
+       {
+        "labels": {
+         "path": "/api/service-42"
+        },
+        "ts": 1794722400.0,
+        "ref": 39.42962962962963,
+        "got": 38.88070175438597
+       },
+       {
+        "labels": {
+         "path": "/api/service-8"
+        },
+        "ts": 1794722400.0,
+        "ref": 38.88888888888889,
+        "got": 38.31578947368421
+       }
+      ],
+      "missing_examples": [],
+      "extra_examples": []
+     },
+     "elapsed": 0.02
+    },
+    "o2": {
+     "verdict": "DIFF",
+     "summary": "result type matrix vs vector",
+     "detail": {
+      "note": "result type matrix vs vector"
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "F4-range-zero-step",
+   "group": "api",
+   "why": "step=0 must be rejected",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "error"
+    },
+    "mimir": {
+     "verdict": "SAME-ERR",
+     "summary": "both errored",
+     "detail": {
+      "ref": "invalid parameter \"step\": zero or negative query resolution step widths are not accepted. Try a positive integer",
+      "got": "invalid parameter \"step\": zero or negative query resolution step widths are not accepted. Try a positive integer"
+     },
+     "elapsed": 0.0
+    },
+    "vm": {
+     "verdict": "SAME-ERR",
+     "summary": "both errored",
+     "detail": {
+      "ref": "invalid parameter \"step\": zero or negative query resolution step widths are not accepted. Try a positive integer",
+      "got": "step=0ms is out of allowed range [1ms ... 3153600000000ms]"
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "DIFF",
+     "summary": "reference errored but system answered",
+     "detail": {
+      "note": "reference errored but system answered",
+      "ref": "invalid parameter \"step\": zero or negative query resolution step widths are not accepted. Try a positive integer"
+     },
+     "elapsed": 0.02
+    }
+   }
+  },
+  {
+   "id": "F5-labels",
+   "group": "api",
+   "why": "/api/v1/labels",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "missing=0 extra=0",
+     "detail": {
+      "missing": 0,
+      "extra": 0,
+      "examples": {
+       "missing": [],
+       "extra": []
+      }
+     },
+     "elapsed": 0.0
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "missing=0 extra=0",
+     "detail": {
+      "missing": 0,
+      "extra": 0,
+      "examples": {
+       "missing": [],
+       "extra": []
+      }
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "missing=0 extra=0",
+     "detail": {
+      "missing": 0,
+      "extra": 0,
+      "examples": {
+       "missing": [],
+       "extra": []
+      }
+     },
+     "elapsed": 0.0
+    }
+   }
+  },
+  {
+   "id": "F6-label-values",
+   "group": "api",
+   "why": "/api/v1/label/path/values",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "missing=0 extra=0",
+     "detail": {
+      "missing": 0,
+      "extra": 0,
+      "examples": {
+       "missing": [],
+       "extra": []
+      }
+     },
+     "elapsed": 0.0
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "missing=0 extra=0",
+     "detail": {
+      "missing": 0,
+      "extra": 0,
+      "examples": {
+       "missing": [],
+       "extra": []
+      }
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "ERR",
+     "summary": "error: Error# match[] must specify a metric for label values, e.g. match[]=up",
+     "detail": {
+      "error": "Error# match[] must specify a metric for label values, e.g. match[]=up; querying all metrics streams is not supported"
+     },
+     "elapsed": 0.0
+    }
+   }
+  },
+  {
+   "id": "F7-series",
+   "group": "api",
+   "why": "/api/v1/series",
+   "systems": {
+    "prometheus": {
+     "verdict": "REF",
+     "elapsed": 0.0,
+     "status": "ok"
+    },
+    "mimir": {
+     "verdict": "PASS",
+     "summary": "missing=0 extra=0",
+     "detail": {
+      "missing": 0,
+      "extra": 0,
+      "examples": {
+       "missing": [],
+       "extra": []
+      }
+     },
+     "elapsed": 0.0
+    },
+    "vm": {
+     "verdict": "PASS",
+     "summary": "missing=0 extra=0",
+     "detail": {
+      "missing": 0,
+      "extra": 0,
+      "examples": {
+       "missing": [],
+       "extra": []
+      }
+     },
+     "elapsed": 0.0
+    },
+    "o2": {
+     "verdict": "PASS",
+     "summary": "missing=0 extra=0",
+     "detail": {
+      "missing": 0,
+      "extra": 0,
+      "examples": {
+       "missing": [],
+       "extra": []
+      }
+     },
+     "elapsed": 0.02
+    }
+   }
+  }
+ ]
+}

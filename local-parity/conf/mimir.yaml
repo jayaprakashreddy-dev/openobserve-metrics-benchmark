@@ -1,0 +1,76 @@
+# Same settings as openobserve-metrics-benchmark/deploy/mimir/deploy.yaml,
+# with data paths moved under local/data/mimir (DATA_DIR is substituted by stack.sh).
+multitenancy_enabled: false
+
+activity_tracker:
+  filepath: ${DATA_DIR}/mimir/activity.log
+
+blocks_storage:
+  backend: filesystem
+  bucket_store:
+    sync_dir: ${DATA_DIR}/mimir/tsdb-sync
+    sync_interval: 1m
+    ignore_deletion_mark_delay: 5m
+    ignore_deletion_mark_while_querying_delay: 4m
+  filesystem:
+    dir: ${DATA_DIR}/mimir/data/tsdb
+  tsdb:
+    dir: ${DATA_DIR}/mimir/tsdb
+    head_compaction_idle_timeout: 5m
+    retention_period: 15m
+
+compactor:
+  data_dir: ${DATA_DIR}/mimir/compactor
+  first_level_compaction_wait_period: 1m
+  compaction_interval: 5m
+  cleanup_interval: 5m
+  deletion_delay: 10m
+  sharding_ring:
+    kvstore:
+      store: memberlist
+
+distributor:
+  ring:
+    instance_addr: 127.0.0.1
+    kvstore:
+      store: memberlist
+  ha_tracker:
+    enable_ha_tracker: true
+    kvstore:
+      store: memberlist
+
+ingester:
+  ring:
+    instance_addr: 127.0.0.1
+    kvstore:
+      store: memberlist
+    replication_factor: 1
+
+ruler:
+  rule_path: ${DATA_DIR}/mimir/data-ruler/
+
+ruler_storage:
+  backend: filesystem
+  filesystem:
+    dir: ${DATA_DIR}/mimir/rules
+
+querier:
+  timeout: 600s
+
+server:
+  http_listen_port: 9009
+  log_level: error
+  http_server_write_timeout: 600s
+
+store_gateway:
+  sharding_ring:
+    replication_factor: 1
+
+limits:
+  ingestion_rate: 20000000
+  ingestion_burst_size: 20000000
+  max_global_series_per_user: 150000000
+  max_fetched_chunks_per_query: 20000000
+  ha_cluster_label: prometheus
+  ha_replica_label: prometheus_replica
+  out_of_order_time_window: 2h

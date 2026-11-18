@@ -1,0 +1,9 @@
+bin/
+data/
+logs/
+rust/
+openobserve-src/
+fake-webserver/
+vendor/
+__pycache__/
+results/report.html
