@@ -1,0 +1,11 @@
+# Same settings as openobserve-metrics-benchmark/deploy/prometheus/deploy.yaml
+global:
+  scrape_interval: 15s
+  scrape_timeout: 10s
+
+# The backfill's concurrent senders reorder neighbouring steps; without a window that is a 400.
+storage:
+  tsdb:
+    out_of_order_time_window: 2h
+
+scrape_configs: []
